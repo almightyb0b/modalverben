@@ -23,9 +23,77 @@
         <button>Odmieńmy to</button>
         <p style="margin-top: 5px">Kliknij, aby przejść do programu</p>
       </div>
-      <img src="./sources/ilustration.svg" alt="" width="883px" />
+      <img src="./sources/ilustration.svg" alt="" width="753px" />
     </section>
-    <section id="converter"></section>
+
+    <section id="converter">
+      <header>
+        <p>&num;spróbuj</p>
+        <h1>To Takie Proste</h1>
+      </header>
+
+      <div class="instruction-block">
+        <h2>Instrukcja <img src="./sources/instruction-icon.svg" alt="Instrukcja" /></h2>
+        <ul>
+          <li><span class="circle">1</span> Punkt pierwszy</li>
+          <li><span class="circle">2</span> Punkt drugi</li>
+          <li><span class="circle">3</span> Punkt trzeci</li>
+        </ul>
+      </div>
+
+      <div class="form-block">
+        <form id="converter-form">
+          <input type="text" placeholder="np. konnen" id="verb-input" list="modal-verbs-list" />
+          <datalist id="modal-verbs-list">
+            <option value="konnen"></option>
+            <option value="mussen"></option>
+            <option value="durfen"></option>
+            <option value="sollen"></option>
+            <option value="wollen"></option>
+            <option value="mogen"></option>
+          </datalist>
+          <button type="button" id="clear-button">Wyczyść</button>
+          <button type="submit" id="convert-button" onclick="convertModalVerbs()">Konwertuj</button>
+        </form>
+      </div>
+
+      <div class="result-block">
+        <table>
+          <thead>
+            <tr>
+              <th>Podmiot</th>
+              <th>Forma czasownika</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ich</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>du</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>er/sie/es</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>wir</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>ihr</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>sie/Sie</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
     <script src="./js/app.js"></script>
   </body>
 </html>
