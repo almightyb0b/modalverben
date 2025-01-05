@@ -59,8 +59,11 @@ document.getElementById("clear-button").addEventListener("click", () => {
 // Add event listener for form submission
 document.getElementById("converter-form").addEventListener("submit", convertModalVerbs);
 
-// Smooth scroll to converter section
-document.querySelector("section#intro button").addEventListener("click", () => {
+// Добавляем обработчик на кнопку для скрытия секции #intro
+document.getElementById("hideIntro").addEventListener("click", () => {
+  const introSection = document.getElementById("intro");
+  introSection.classList.add("hidden"); // Добавляем класс для анимации
+  // Прокручиваем страницу к следующей секции
   const converterSection = document.querySelector("section#converter");
   converterSection.scrollIntoView({ behavior: "smooth" });
 });
