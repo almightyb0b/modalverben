@@ -90,10 +90,26 @@ section#converter h1 {
   margin-bottom: 20px;
 }
 
+.instruction-block .circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #252525;
+  color: #fffae6;
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
 .instruction-block {
   margin: 20px 0;
   text-align: left;
-  max-width: 600px;
+  width: 800px;
   margin: 0 auto;
 }
 
@@ -121,21 +137,8 @@ section#converter h1 {
   align-items: center;
 }
 
-.instruction-block .circle {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: #252525;
-  color: #fffae6;
-  font-weight: 500;
-  margin-right: 10px;
-}
-
 .form-block {
-  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 form input {
@@ -166,7 +169,6 @@ form button:active {
 }
 
 .result-block {
-  margin-top: 40px;
   text-align: center;
 }
 
@@ -207,80 +209,17 @@ form button:active {
 /* Adaptation */
 
 /* Mobile */
+/* Enable scrolling on mobile devices */
 @media screen and (max-width: 767px) {
-  section#intro h1 {
-    font-size: 36px;
-  }
-
-  section#intro h2 {
-    font-size: 30px;
-  }
-
-  section#intro p {
-    font-size: 14px;
-  }
-
-  section#intro #description {
-    font-size: 18px;
-    margin: 15px 0;
-  }
-
-  section#intro button {
-    width: 200px;
-    height: 50px;
-    font-size: 16px;
-  }
-
-  section#converter h1 {
-    font-size: 36px;
-  }
-
-  form input {
-    width: 80%;
-    font-size: 16px;
-  }
-
-  form button {
-    padding: 10px 30px;
-    font-size: 16px;
-  }
-
-  .result-block table {
-    font-size: 14px;
-  }
-
-  .result-block td:first-child,
-  .result-block td:last-child {
-    width: 100%;
+  body {
+    overflow: auto;
   }
 }
 
-/* 768px - 1024px */
+/* Optimize for tablets and laptops */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  section#intro h1 {
-    font-size: 42px;
-  }
-
-  section#intro h2 {
-    font-size: 36px;
-  }
-
-  section#intro p {
-    font-size: 15px;
-  }
-
-  section#intro #description {
-    font-size: 18px;
-  }
-
-  section#intro button {
-    width: 220px;
-    height: 55px;
-    font-size: 18px;
-  }
-
-  section#converter h1 {
-    font-size: 42px;
+  body {
+    font-size: 16px;
   }
 
   form input {
@@ -296,39 +235,12 @@ form button:active {
   .result-block table {
     font-size: 16px;
   }
-
-  .result-block td:first-child,
-  .result-block td:last-child {
-    width: 100%;
-  }
 }
 
-/* Desktop */
+/* Desktop settings */
 @media screen and (min-width: 1025px) {
-  section#intro h1 {
-    font-size: 48px;
-  }
-
-  section#intro h2 {
-    font-size: 40px;
-  }
-
-  section#intro p {
-    font-size: 16px;
-  }
-
-  section#intro #description {
-    font-size: 20px;
-  }
-
-  section#intro button {
-    width: 235px;
-    height: 60px;
-    font-size: 20px;
-  }
-
-  section#converter h1 {
-    font-size: 48px;
+  body {
+    overflow: hidden; /* Prevent scrolling */
   }
 
   form input {
@@ -338,10 +250,6 @@ form button:active {
 
   form button {
     padding: 10px 40px;
-    font-size: 18px;
-  }
-
-  .result-block table {
     font-size: 18px;
   }
 }
