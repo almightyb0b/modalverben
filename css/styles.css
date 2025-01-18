@@ -1,61 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
 
+/* Global Styles */
 * {
   margin: 0;
-  font-family: "Parkinsans", serif;
-  background-color: #fffae6;
+  padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  font-family: "Parkinsans", sans-serif;
 }
 
 html,
 body {
   height: 100%;
   scroll-behavior: smooth;
+  background-color: #fffae6;
 }
 
-section#intro {
+/* Sections */
+section {
+  padding: 20px;
   text-align: center;
+  transition: opacity 0.5s ease, height 0.5s ease, visibility 0.5s ease;
+  overflow: hidden;
 }
 
-section#intro.hidden {
+section.hidden {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
 
-section#intro h1 {
-  font-size: 48px;
+/* Intro Section */
+#intro h1 {
+  font-size: 36px;
   font-weight: 500;
-  padding: 5px;
+  margin: 10px 0;
 }
 
-section#intro h2 {
-  font-size: 40px;
+#intro h2 {
+  font-size: 28px;
   font-weight: 400;
-  padding: 5px;
+  margin: 10px 0;
 }
 
-section#intro p {
-  font-size: 16px;
+#intro #description {
+  font-size: 18px;
+  margin: 20px 0;
 }
 
-section#intro #description {
-  margin: 28px 0 28px 0;
-  font-size: 20px;
-}
-
-section#intro .info-block {
-  margin: 30px 0 0 0;
-}
-
-section#intro button {
-  width: 235px;
-  height: 60px;
+#intro button {
+  width: 200px;
+  height: 50px;
   background-color: #252525;
   color: #fffae6;
-  font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   border-radius: 100px;
   box-shadow: 3px 3px #606060;
@@ -63,54 +62,27 @@ section#intro button {
   transition: all 0.1s ease-in-out;
 }
 
-section#intro button:active {
-  translate: 3px 3px;
+#intro button:active {
+  transform: translate(3px, 3px);
   box-shadow: none;
 }
 
-section#converter {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #fffae6;
-}
-
-section#converter header p {
+/* Converter Section */
+#converter header p {
   font-size: 16px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
-section#converter h1 {
-  font-size: 48px;
+#converter h1 {
+  font-size: 36px;
   font-weight: 500;
-  padding: 5px;
   margin-bottom: 20px;
 }
 
-.instruction-block .circle {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  text-align: center;
-  border-radius: 50%;
-  background-color: #252525;
-  color: #fffae6;
-  font-weight: 500;
-  font-size: 16px;
-  margin-right: 10px;
-}
-
 .instruction-block {
-  margin: 20px 0;
+  margin: 20px auto;
   text-align: left;
-  width: 800px;
-  margin: 0 auto;
+  max-width: 800px;
 }
 
 .instruction-block h2 {
@@ -137,25 +109,44 @@ section#converter h1 {
   align-items: center;
 }
 
-.form-block {
-  margin-bottom: 20px;
+.circle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #252525;
+  color: #fffae6;
+  font-weight: 500;
+  margin-right: 10px;
 }
 
-form input {
-  width: 60%;
+.form-block {
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.form-block input {
+  width: 100%;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0;
   font-size: 18px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-form button {
-  margin-bottom: 5px;
-  padding: 10px 40px;
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  padding: 10px 20px;
   background-color: #252525;
   color: #fffae6;
-  font-weight: 400;
   font-size: 18px;
   border: none;
   border-radius: 5px;
@@ -163,19 +154,55 @@ form button {
   transition: all 0.1s ease-in-out;
 }
 
-form button:active {
-  translate: 3px 3px;
+.button-group button:active {
+  transform: translate(3px, 3px);
   box-shadow: none;
 }
 
-.result-block {
+/* Time Selection Styles */
+.time-selection {
+  margin: 20px 0;
   text-align: center;
+}
+
+.time-selection p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.time-selection .button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time-selection .time-button {
+  padding: 10px 20px;
+  background-color: #e0e0e0;
+  color: #252525;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.time-selection .time-button.active {
+  background-color: #252525;
+  color: #fffae6;
+}
+
+.time-selection .time-button:hover {
+  background-color: #ccc;
+}
+
+.result-block {
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 .result-block table {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
   border-collapse: collapse;
   background-color: #fff;
   border-radius: 24px;
@@ -198,58 +225,57 @@ form button:active {
   font-size: 18px;
 }
 
-.result-block td:first-child {
-  width: 400px;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #252525;
+  color: #fffae6;
 }
 
-.result-block td:last-child {
-  width: 585px;
-}
-
-/* Adaptation */
-
-/* Mobile */
-/* Enable scrolling on mobile devices */
+/* Media Queries */
 @media screen and (max-width: 767px) {
-  body {
-    overflow: auto;
+  #intro h1 {
+    font-size: 28px;
   }
-}
 
-/* Optimize for tablets and laptops */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  body {
+  #intro h2 {
+    font-size: 24px;
+  }
+
+  #intro #description {
     font-size: 16px;
   }
 
-  form input {
-    width: 70%;
-    font-size: 17px;
-  }
-
-  form button {
-    padding: 10px 35px;
-    font-size: 17px;
-  }
-
-  .result-block table {
+  #intro button {
+    width: 180px;
+    height: 45px;
     font-size: 16px;
   }
-}
 
-/* Desktop settings */
-@media screen and (min-width: 1025px) {
-  body {
-    overflow: hidden; /* Prevent scrolling */
+  #converter h1 {
+    font-size: 28px;
   }
 
-  form input {
-    width: 60%;
-    font-size: 18px;
+  .instruction-block h2 {
+    font-size: 20px;
   }
 
-  form button {
-    padding: 10px 40px;
-    font-size: 18px;
+  .instruction-block li {
+    font-size: 14px;
+  }
+
+  .form-block input {
+    font-size: 16px;
+  }
+
+  .button-group button {
+    font-size: 16px;
+  }
+
+  .result-block th,
+  .result-block td {
+    padding: 10px;
+    font-size: 16px;
   }
 }

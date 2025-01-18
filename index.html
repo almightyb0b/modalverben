@@ -3,97 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pomocnik Czasowników Modalnych - Odmiana niemieckich czasowników modalnych." />
     <link rel="stylesheet" href="./css/styles.css" />
-    <title>Pomocnik</title>
+    <title>Pomocnik Czasowników Modalnych</title>
   </head>
   <body>
-    <section id="intro">
-      <p style="margin-top: 40px">&num;poznaj</p>
-      <div class="info-block">
-        <h1>Deutsch</h1>
-        <h2>Pomocnik Czasowników Modalnych</h2>
-        <p id="description">
-          Co to jest i do czego służy - Pomocnik Czasowników Modalnych? <br />
-          Sprawdź, jak łatwo możesz opanować niemieckie czasowniki modalne! Wpisz dowolny czasownik, <br />
-          a program sam odmieni go we wszystkich formach. Ułatw sobie naukę i zacznij rozumieć <br />
-          gramatykę już dziś!
-        </p>
-      </div>
-      <div class="btn-block">
-        <button id="hideIntro">Odmieńmy to</button>
-        <p style="margin-top: 5px">Kliknij, aby przejść do programu</p>
-      </div>
-      <img src="./sources/ilustration.svg" alt="" width="753px" />
-    </section>
+    <main>
+      <!-- Intro Section -->
+      <section id="intro">
+        <p class="section-tag">&num;poznaj</p>
+        <article class="info-block">
+          <h1>Deutsch</h1>
+          <h2>Pomocnik Czasowników Modalnych</h2>
+          <p id="description">
+            Co to jest i do czego służy - Pomocnik Czasowników Modalnych? <br />
+            Sprawdź, jak łatwo możesz opanować niemieckie czasowniki modalne! Wpisz dowolny czasownik, <br />
+            a program sam odmieni go we wszystkich formach. Ułatw sobie naukę i zacznij rozumieć <br />
+            gramatykę już dziś!
+          </p>
+        </article>
+        <div class="btn-block">
+          <button id="hideIntro" aria-label="Przejdź do programu">Odmieńmy to</button>
+          <p class="btn-hint">Kliknij, aby przejść do programu</p>
+        </div>
+        <img src="./sources/ilustration.svg" alt="Ilustracja pomocnika czasowników modalnych" class="illustration" />
+      </section>
 
-    <section id="converter">
-      <header>
-        <p>&num;spróbuj</p>
-        <h1>To Takie Proste</h1>
-      </header>
+      <!-- Converter Section -->
+      <section id="converter" class="hidden">
+        <header>
+          <p class="section-tag">&num;spróbuj</p>
+          <h1>To Takie Proste</h1>
+        </header>
 
-      <div class="instruction-block">
-        <h2>Instrukcja <img src="./sources/icons svg/instuction-icon.svg" alt="Instrukcja" /></h2>
-        <ul>
-          <li><span class="circle">1</span>Wpisz lub wybierz niemiecki czasownik modalny który chcesz odmienić w pole tekstowe</li>
-          <li><span class="circle">2</span>Naciśnij przycisk "Odmień", aby zobaczyć odmianę czasownika</li>
-          <li><span class="circle">3</span>Jeśli chcesz spróbować z innymi czasownikami, kliknij przycisk "Wyczyść".</li>
-        </ul>
-      </div>
+        <article class="instruction-block">
+          <h2>
+            Instrukcja
+            <img src="./sources/icons svg/instuction-icon.svg" alt="Ikona instrukcji" />
+          </h2>
+          <ul>
+            <li>
+              <span class="circle">1</span>
+              Wpisz lub wybierz niemiecki czasownik modalny, który chcesz odmienić, w pole tekstowe.
+            </li>
+            <li>
+              <span class="circle">2</span>
+              Naciśnij przycisk "Odmień", aby zobaczyć odmianę czasownika.
+            </li>
+            <li>
+              <span class="circle">3</span>
+              Jeśli chcesz spróbować z innymi czasownikami, kliknij przycisk "Wyczyść".
+            </li>
+          </ul>
+        </article>
 
-      <div class="form-block">
         <form id="converter-form">
-          <input type="text" placeholder="np. konnen" id="verb-input" list="modal-verbs-list" />
-          <datalist id="modal-verbs-list">
-            <option value="konnen"></option>
-            <option value="mussen"></option>
-            <option value="durfen"></option>
-            <option value="sollen"></option>
-            <option value="wollen"></option>
-            <option value="mogen"></option>
-          </datalist>
-          <button type="button" id="clear-button">Wyczyść</button>
-          <button type="submit" id="convert-button" onclick="convertModalVerbs()">Konwertuj</button>
+          <div class="form-block">
+            <input type="text" placeholder="np. können" id="verb-input" list="modal-verbs-list" aria-label="Wpisz czasownik modalny" />
+            <datalist id="modal-verbs-list">
+              <option value="dürfen"></option>
+              <option value="können"></option>
+              <option value="müssen"></option>
+              <option value="sollen"></option>
+              <option value="wollen"></option>
+              <option value="mögen"></option>
+            </datalist>
+            <div class="button-group">
+              <button type="button" id="clear-button" aria-label="Wyczyść pole">Wyczyść</button>
+              <button type="submit" id="convert-button" aria-label="Odmień czasownik">Odmień</button>
+            </div>
+          </div>
         </form>
-      </div>
+        <!-- Inside the #converter section, after the form-block -->
+        <div class="time-selection">
+          <p>Wybierz czas:</p>
+          <div class="button-group">
+            <button type="button" class="time-button active" data-time="present">Teraźniejszy</button>
+            <button type="button" class="time-button" data-time="past">Przeszły</button>
+            <button type="button" class="time-button" data-time="future">Przyszły</button>
+          </div>
+        </div>
 
-      <div class="result-block">
-        <table>
-          <thead>
-            <tr>
-              <th>Podmiot</th>
-              <th>Forma czasownika</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ich</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>du</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>er/sie/es</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>wir</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>ihr</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>sie/Sie</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+        <div class="result-block">
+          <table>
+            <thead>
+              <tr>
+                <th>Podmiot</th>
+                <th>Forma czasownika</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ich</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>du</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>er/sie/es</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>wir</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ihr</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>sie/Sie</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
     <script src="./js/app.js"></script>
   </body>
 </html>
