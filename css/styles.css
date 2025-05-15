@@ -17,10 +17,12 @@ body {
 
 /* Sections */
 section {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
-  transition: opacity 0.5s ease, height 0.5s ease, visibility 0.5s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 section.hidden {
@@ -31,65 +33,116 @@ section.hidden {
   margin: 0;
 }
 
-/* Intro Section */
-#intro h1 {
-  font-size: 36px;
+.section-tag {
+  display: inline-block;
+  background-color: #f0e6c9;
+  padding: 5px 15px;
+  border-radius: 20px;
   font-weight: 500;
+  margin-bottom: 20px;
+  color: #252525;
+}
+
+/* Intro Section */
+.info-block {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+#intro h1 {
+  font-size: 42px;
+  font-weight: 600;
   margin: 10px 0;
+  color: #252525;
 }
 
 #intro h2 {
-  font-size: 28px;
-  font-weight: 400;
-  margin: 10px 0;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 15px 0;
+  color: #555;
 }
 
 #intro #description {
   font-size: 18px;
+  line-height: 1.6;
   margin: 20px 0;
+  color: #666;
+}
+
+.btn-block {
+  margin: 30px 0;
 }
 
 #intro button {
-  width: 200px;
-  height: 50px;
+  width: 220px;
+  height: 55px;
   background-color: #252525;
   color: #fffae6;
   font-size: 18px;
+  font-weight: 500;
   border: none;
   border-radius: 100px;
-  box-shadow: 3px 3px #606060;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#intro button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
 #intro button:active {
-  transform: translate(3px, 3px);
-  box-shadow: none;
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.illustration {
+  max-width: 80%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
 }
 
 /* Converter Section */
-#converter header p {
-  font-size: 16px;
-  margin-top: 20px;
+#converter header {
+  margin-bottom: 30px;
 }
 
 #converter h1 {
   font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin: 15px 0;
+  color: #252525;
 }
 
 .instruction-block {
-  margin: 20px auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 30px auto;
   text-align: left;
   max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .instruction-block h2 {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
   display: flex;
   align-items: center;
+  color: #252525;
+  margin-bottom: 20px;
 }
 
 .instruction-block h2 img {
@@ -104,70 +157,93 @@ section.hidden {
 }
 
 .instruction-block li {
-  margin: 10px 0;
+  margin: 15px 0;
   display: flex;
   align-items: center;
+  font-size: 16px;
+  color: #555;
 }
 
 .circle {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background-color: #252525;
   color: #fffae6;
   font-weight: 500;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .form-block {
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
   margin: 20px auto;
   max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .form-block input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 15px;
+  margin: 10px 0 20px;
   font-size: 18px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.form-block input:focus {
+  outline: none;
+  border-color: #252525;
+  box-shadow: 0 0 0 2px rgba(37, 37, 37, 0.1);
 }
 
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin-top: 10px;
 }
 
 .button-group button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #252525;
   color: #fffae6;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-group button:hover {
+  background-color: #3a3a3a;
+  transform: translateY(-2px);
 }
 
 .button-group button:active {
-  transform: translate(3px, 3px);
-  box-shadow: none;
+  transform: translateY(1px);
 }
 
 /* Time Selection Styles */
 .time-selection {
-  margin: 20px 0;
-  text-align: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .time-selection p {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #555;
 }
 
 .time-selection .button-group {
@@ -178,13 +254,13 @@ section.hidden {
 
 .time-selection .time-button {
   padding: 10px 20px;
-  background-color: #e0e0e0;
-  color: #252525;
+  background-color: #f0f0f0;
+  color: #555;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .time-selection .time-button.active {
@@ -192,51 +268,65 @@ section.hidden {
   color: #fffae6;
 }
 
-.time-selection .time-button:hover {
-  background-color: #ccc;
+.time-selection .time-button:hover:not(.active) {
+  background-color: #e0e0e0;
 }
 
 .result-block {
-  margin: 20px auto;
+  margin: 30px auto;
   max-width: 800px;
 }
 
 .result-block table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background-color: #fff;
-  border-radius: 24px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .result-block th,
 .result-block td {
   padding: 15px;
   text-align: center;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
 }
 
 .result-block th {
   background-color: #252525;
   color: #fffae6;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.result-block tr:last-child td {
+  border-bottom: none;
 }
 
 .result-block td {
   font-size: 18px;
+  color: #555;
+  transition: background-color 0.2s ease;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #252525;
-  color: #fffae6;
+.result-block tr:hover td {
+  background-color: #f9f9f9;
 }
 
 /* Media Queries */
 @media screen and (max-width: 767px) {
+  section {
+    padding: 30px 15px;
+  }
+  
+  .info-block, .instruction-block, .form-block, .time-selection {
+    padding: 20px 15px;
+  }
+  
   #intro h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   #intro h2 {
@@ -249,7 +339,7 @@ footer {
 
   #intro button {
     width: 180px;
-    height: 45px;
+    height: 50px;
     font-size: 16px;
   }
 
@@ -266,16 +356,17 @@ footer {
   }
 
   .form-block input {
+    padding: 12px;
     font-size: 16px;
   }
 
   .button-group button {
-    font-size: 16px;
+    padding: 10px 20px;
+    font-size: 14px;
   }
-
-  .result-block th,
-  .result-block td {
-    padding: 10px;
+  
+  .result-block th, .result-block td {
+    padding: 12px 8px;
     font-size: 16px;
   }
 }

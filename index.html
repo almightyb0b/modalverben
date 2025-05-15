@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Pomocnik Czasowników Modalnych - Odmiana niemieckich czasowników modalnych." />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Pomocnik Czasowników Modalnych</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <main>
@@ -23,7 +24,10 @@
           </p>
         </article>
         <div class="btn-block">
-          <button id="hideIntro" aria-label="Przejdź do programu">Odmieńmy to</button>
+          <button id="hideIntro" aria-label="Przejdź do programu">
+            <span>Odmieńmy to</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
           <p class="btn-hint">Kliknij, aby przejść do programu</p>
         </div>
         <img src="./sources/ilustration.svg" alt="Ilustracja pomocnika czasowników modalnych" class="illustration" />
@@ -59,6 +63,7 @@
 
         <form id="converter-form">
           <div class="form-block">
+            <label for="verb-input">Wpisz czasownik modalny:</label>
             <input type="text" placeholder="np. können" id="verb-input" list="modal-verbs-list" aria-label="Wpisz czasownik modalny" />
             <datalist id="modal-verbs-list">
               <option value="dürfen"></option>
@@ -69,12 +74,16 @@
               <option value="mögen"></option>
             </datalist>
             <div class="button-group">
-              <button type="button" id="clear-button" aria-label="Wyczyść pole">Wyczyść</button>
-              <button type="submit" id="convert-button" aria-label="Odmień czasownik">Odmień</button>
+              <button type="button" id="clear-button" aria-label="Wyczyść pole">
+                <i class="fas fa-eraser"></i> Wyczyść
+              </button>
+              <button type="submit" id="convert-button" aria-label="Odmień czasownik">
+                <i class="fas fa-sync-alt"></i> Odmień
+              </button>
             </div>
           </div>
         </form>
-        <!-- Inside the #converter section, after the form-block -->
+        
         <div class="time-selection">
           <p>Wybierz czas:</p>
           <div class="button-group">
@@ -120,8 +129,20 @@
             </tbody>
           </table>
         </div>
+        
+        <div class="btn-block">
+          <button id="backToIntro" aria-label="Powrót do strony głównej">
+            <i class="fas fa-arrow-left"></i> Powrót
+          </button>
+        </div>
       </section>
     </main>
+    
+    <footer>
+      <p>&copy; 2023 Pomocnik Czasowników Modalnych</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
